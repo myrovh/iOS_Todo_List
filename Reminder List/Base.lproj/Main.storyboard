@@ -8,7 +8,7 @@
         <!--Reminder List-->
         <scene sceneID="5IZ-P7-nCI">
             <objects>
-                <tableViewController title="Reminder List" id="hwH-Hh-ArN" sceneMemberID="viewController">
+                <tableViewController title="Reminder List" id="hwH-Hh-ArN" customClass="ReminderListController" customModule="Reminder_List" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="75" sectionHeaderHeight="28" sectionFooterHeight="28" id="VP2-8E-Wvx">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -71,7 +71,7 @@
         <!--Add Reminder-->
         <scene sceneID="5YD-wd-fco">
             <objects>
-                <viewController title="Add Reminder" id="aQb-SS-mMj" sceneMemberID="viewController">
+                <viewController title="Add Reminder" id="aQb-SS-mMj" customClass="AddReminderController" customModule="Reminder_List" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="zDJ-zd-pLp"/>
                         <viewControllerLayoutGuide type="bottom" id="qFN-oU-n19"/>
@@ -110,6 +110,10 @@
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <connections>
+                        <outlet property="descriptionText" destination="W1K-lr-BYs" id="mqR-7W-Mnw"/>
+                        <outlet property="titleText" destination="pc8-Dx-ktj" id="haX-xy-flt"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ytW-38-EFa" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

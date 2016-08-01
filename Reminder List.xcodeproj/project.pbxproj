@@ -16,6 +16,8 @@
 		8BF0C3B21D4EE90A00A5B831 /* Reminder_ListTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BF0C3B11D4EE90A00A5B831 /* Reminder_ListTests.swift */; };
 		8BF0C3BD1D4EE90A00A5B831 /* Reminder_ListUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BF0C3BC1D4EE90A00A5B831 /* Reminder_ListUITests.swift */; };
 		8BF0C3CB1D4EEDFD00A5B831 /* Reminder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BF0C3CA1D4EEDFD00A5B831 /* Reminder.swift */; };
+		8BF0C3CF1D4F036500A5B831 /* ReminderListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BF0C3CE1D4F036500A5B831 /* ReminderListController.swift */; };
+		8BF0C3D11D4F05C600A5B831 /* AddReminderController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BF0C3D01D4F05C600A5B831 /* AddReminderController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +53,8 @@
 		8BF0C3BC1D4EE90A00A5B831 /* Reminder_ListUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reminder_ListUITests.swift; sourceTree = "<group>"; };
 		8BF0C3BE1D4EE90A00A5B831 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8BF0C3CA1D4EEDFD00A5B831 /* Reminder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reminder.swift; sourceTree = "<group>"; };
+		8BF0C3CE1D4F036500A5B831 /* ReminderListController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ReminderListController.swift; path = ../ReminderListController.swift; sourceTree = "<group>"; };
+		8BF0C3D01D4F05C600A5B831 /* AddReminderController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddReminderController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +105,7 @@
 		8BF0C3981D4EE90900A5B831 /* Reminder List */ = {
 			isa = PBXGroup;
 			children = (
+				8BF0C3CE1D4F036500A5B831 /* ReminderListController.swift */,
 				8BF0C3991D4EE90900A5B831 /* AppDelegate.swift */,
 				8BF0C39B1D4EE90900A5B831 /* ViewController.swift */,
 				8BF0C39D1D4EE90900A5B831 /* Main.storyboard */,
@@ -109,6 +114,7 @@
 				8BF0C3A81D4EE90A00A5B831 /* Info.plist */,
 				8BF0C3A01D4EE90900A5B831 /* Reminder_List.xcdatamodeld */,
 				8BF0C3CA1D4EEDFD00A5B831 /* Reminder.swift */,
+				8BF0C3D01D4F05C600A5B831 /* AddReminderController.swift */,
 			);
 			path = "Reminder List";
 			sourceTree = "<group>";
@@ -264,6 +270,8 @@
 			files = (
 				8BF0C39C1D4EE90900A5B831 /* ViewController.swift in Sources */,
 				8BF0C3A21D4EE90900A5B831 /* Reminder_List.xcdatamodeld in Sources */,
+				8BF0C3CF1D4F036500A5B831 /* ReminderListController.swift in Sources */,
+				8BF0C3D11D4F05C600A5B831 /* AddReminderController.swift in Sources */,
 				8BF0C39A1D4EE90900A5B831 /* AppDelegate.swift in Sources */,
 				8BF0C3CB1D4EEDFD00A5B831 /* Reminder.swift in Sources */,
 			);
