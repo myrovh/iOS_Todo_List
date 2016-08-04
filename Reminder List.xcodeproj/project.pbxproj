@@ -17,6 +17,7 @@
 		8BF0C3CB1D4EEDFD00A5B831 /* Reminder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BF0C3CA1D4EEDFD00A5B831 /* Reminder.swift */; };
 		8BF0C3CF1D4F036500A5B831 /* ReminderListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BF0C3CE1D4F036500A5B831 /* ReminderListController.swift */; };
 		8BF0C3D11D4F05C600A5B831 /* AddReminderController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BF0C3D01D4F05C600A5B831 /* AddReminderController.swift */; };
+		8BF9B5191D5355DD00AA3523 /* ReminderViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BF9B5181D5355DD00AA3523 /* ReminderViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +54,7 @@
 		8BF0C3CA1D4EEDFD00A5B831 /* Reminder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reminder.swift; sourceTree = "<group>"; };
 		8BF0C3CE1D4F036500A5B831 /* ReminderListController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ReminderListController.swift; path = ../ReminderListController.swift; sourceTree = "<group>"; };
 		8BF0C3D01D4F05C600A5B831 /* AddReminderController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddReminderController.swift; sourceTree = "<group>"; };
+		8BF9B5181D5355DD00AA3523 /* ReminderViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReminderViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +108,7 @@
 				8BF0C3CE1D4F036500A5B831 /* ReminderListController.swift */,
 				8BF0C3991D4EE90900A5B831 /* AppDelegate.swift */,
 				8BF0C39D1D4EE90900A5B831 /* Main.storyboard */,
+				8BF9B5181D5355DD00AA3523 /* ReminderViewCell.swift */,
 				8BF0C3A31D4EE90A00A5B831 /* Assets.xcassets */,
 				8BF0C3A51D4EE90A00A5B831 /* LaunchScreen.storyboard */,
 				8BF0C3A81D4EE90A00A5B831 /* Info.plist */,
@@ -270,6 +273,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8BF9B5191D5355DD00AA3523 /* ReminderViewCell.swift in Sources */,
 				8BF0C3A21D4EE90900A5B831 /* Reminder_List.xcdatamodeld in Sources */,
 				8BF0C3CF1D4F036500A5B831 /* ReminderListController.swift in Sources */,
 				8BF0C3D11D4F05C600A5B831 /* AddReminderController.swift in Sources */,

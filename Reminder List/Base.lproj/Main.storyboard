@@ -16,7 +16,7 @@
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ReminderCell" rowHeight="75" id="nBd-iW-DCg">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ReminderCell" rowHeight="75" id="nBd-iW-DCg" customClass="ReminderViewCell">
                                 <rect key="frame" x="0.0" y="92" width="600" height="75"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="nBd-iW-DCg" id="fI1-WF-gFv">
@@ -37,17 +37,30 @@
                                             <color key="textColor" red="0.40733393324607325" green="0.40733393324607325" blue="0.40733393324607325" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w2w-Xt-hQU">
-                                            <rect key="frame" x="442" y="26" width="150" height="21"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GdT-CZ-MWN">
+                                            <rect key="frame" x="233" y="22" width="127" height="30"/>
                                             <animations/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <color key="textColor" red="0.72562172774869116" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="textColor" red="0.73337287303664922" green="0.0" blue="0.0075300270830901111" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
+                                            <variation key="heightClass=compact-widthClass=compact" fixedFrame="YES">
+                                                <rect key="frame" x="286" y="26" width="42" height="21"/>
+                                            </variation>
                                         </label>
                                     </subviews>
                                     <animations/>
+                                    <variation key="heightClass=compact-widthClass=compact">
+                                        <mask key="subviews">
+                                            <include reference="GdT-CZ-MWN"/>
+                                        </mask>
+                                    </variation>
                                 </tableViewCellContentView>
                                 <animations/>
+                                <connections>
+                                    <outlet property="dateLabel" destination="GdT-CZ-MWN" id="ubG-0O-jo4"/>
+                                    <outlet property="descriptionLabel" destination="hqn-cN-3Zv" id="5Jm-4q-Gfw"/>
+                                    <outlet property="titleLabel" destination="1hi-Ts-E4d" id="kXe-Wh-17w"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -187,14 +200,14 @@
                                 <exclude reference="xq8-D5-nDM"/>
                             </mask>
                             <mask key="constraints">
-                                <exclude reference="UiQ-zS-klu"/>
-                                <exclude reference="b7m-tw-Q9S"/>
-                                <exclude reference="kjM-YT-JGA"/>
-                                <exclude reference="k2n-D4-mNb"/>
                                 <exclude reference="wjM-0d-VIA"/>
+                                <exclude reference="k2n-D4-mNb"/>
                                 <exclude reference="IqX-mu-KeV"/>
                                 <exclude reference="cMB-8y-jOP"/>
                                 <exclude reference="hbQ-v5-5CH"/>
+                                <exclude reference="UiQ-zS-klu"/>
+                                <exclude reference="b7m-tw-Q9S"/>
+                                <exclude reference="kjM-YT-JGA"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
@@ -206,20 +219,24 @@
                                 <include reference="xq8-D5-nDM"/>
                             </mask>
                             <mask key="constraints">
-                                <include reference="UiQ-zS-klu"/>
-                                <include reference="b7m-tw-Q9S"/>
-                                <include reference="kjM-YT-JGA"/>
-                                <include reference="k2n-D4-mNb"/>
                                 <include reference="wjM-0d-VIA"/>
+                                <include reference="k2n-D4-mNb"/>
                                 <include reference="IqX-mu-KeV"/>
                                 <include reference="cMB-8y-jOP"/>
                                 <include reference="hbQ-v5-5CH"/>
+                                <include reference="UiQ-zS-klu"/>
+                                <include reference="b7m-tw-Q9S"/>
+                                <include reference="kjM-YT-JGA"/>
                             </mask>
                         </variation>
                     </view>
                     <navigationItem key="navigationItem" title="Add Reminder" id="C5I-r5-fZw">
                         <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="RnB-k9-KID"/>
-                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="uRD-Rc-EOY"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="uRD-Rc-EOY">
+                            <connections>
+                                <segue destination="pmr-G8-IrN" kind="unwind" unwindAction="unwindToReminderList:" id="p6k-TC-eXy"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="completeSwitch" destination="CKE-5D-SD0" id="blG-Fi-pPs"/>
@@ -230,6 +247,7 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ytW-38-EFa" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="pmr-G8-IrN" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="1918.5" y="534"/>
         </scene>
