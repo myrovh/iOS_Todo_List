@@ -9,19 +9,21 @@
 import UIKit
 
 class AddReminderController: UIViewController {
+    //MARK: Properties
     @IBOutlet weak var titleText: UITextField!
     @IBOutlet weak var descriptionText: UITextField!
     @IBOutlet weak var saveButton: UIBarButtonItem!
+    @IBOutlet weak var dueDateLabel: UILabel!
+    @IBOutlet weak var completeSwitch: UISwitch!
     
-    var rTitle: String?
-    var rDescription: String?
-    var reminder: Reminder?
+    var reminder = Reminder?()
     
+    //MARK: Actions
+    
+    //MARK: Navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if saveButton === sender {
-            rTitle = titleText.text
-            rDescription = titleText.text ?? ""
-            reminder = Reminder(title: rTitle!, description: rDescription!, dueDate: NSDate(), isComplete: false)
+            reminder = Reminder(title: titleText.text!, description: descriptionText.text ?? "", dueDate: NSDate(), isComplete: completeSwitch.on)
         }
     }
 

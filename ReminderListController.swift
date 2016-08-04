@@ -9,5 +9,11 @@
 import UIKit
 
 class ReminderListController: UITableViewController {
-
+    
+    @IBAction func unwindToReminderList(sender: UIStoryboardSegue) {
+        if let sourceViewController = sender.sourceViewController as?
+            AddReminderViewController, reminder = sourceViewController.reminder {
+                
+        }
+    }
 }
