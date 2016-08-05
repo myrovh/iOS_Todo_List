@@ -25,6 +25,12 @@ class ReminderListController: UITableViewController {
         }
     }
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        loadSampleData()
+    }
+    
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         return 1
     }
@@ -34,15 +40,15 @@ class ReminderListController: UITableViewController {
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cellIdentifier = "ReminderViewCell"
+        let cellIdentifier = "ReminderCell"
         
-        let cell = tableView.dequeueReusableCellWithIdentifier(cellIdentifier, forIndexPath: indexPath) as! ReminderViewCell
+        let cell = tableView.dequeueReusableCellWithIdentifier(cellIdentifier, forIndexPath: indexPath) as! ReminderCell
         
         let reminder = reminders[indexPath.row]
         
         cell.titleLabel.text = reminder.title
-        cell.descriptionLabel.text = reminder.description
-        cell.dateLabel.text = reminder.dueDate?.description
+        cell.descriptionLabel.text = reminder.reminderDescription
+        cell.dateLabel.text = "date"
         
         return cell
     }

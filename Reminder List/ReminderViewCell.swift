@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ReminderViewCell: UITableViewCell {
+class ReminderCell: UITableViewCell {
     
     //MARK: Properties
     
