@@ -21,7 +21,9 @@ class ReminderListController: UITableViewController {
     @IBAction func unwindToReminderList(sender: UIStoryboardSegue) {
         if let sourceViewController = sender.sourceViewController as?
             AddReminderController, reminder = sourceViewController.reminder {
-                reminders += [reminder]
+                let newIndexPath = NSIndexPath(forRow: reminders.count, inSection: 0)
+                reminders.append(reminder)
+                tableView.insertRowsAtIndexPaths([newIndexPath], withRowAnimation: .Bottom)
         }
     }
     
