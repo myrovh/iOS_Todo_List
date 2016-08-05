@@ -11,11 +11,39 @@ import UIKit
 class ReminderListController: UITableViewController {
     
     var reminder:Reminder?
+    var reminders = [Reminder]()
+    
+    func loadSampleData() {
+        let reminder1 = Reminder(title: "Test", description: "Test Input Data", dueDate: NSDate(), isComplete: false)
+        reminders += [reminder1]
+    }
     
     @IBAction func unwindToReminderList(sender: UIStoryboardSegue) {
         if let sourceViewController = sender.sourceViewController as?
-            AddReminderController, _ = sourceViewController.reminder {
-                
+            AddReminderController, reminder = sourceViewController.reminder {
+                reminders += [reminder]
         }
+    }
+    
+    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+        return 1
+    }
+    
+    override func tableView(tableView: UITableView, numberOfRowsInSection: Int) -> Int {
+        return reminders.count
+    }
+    
+    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        let cellIdentifier = "ReminderViewCell"
+        
+        let cell = tableView.dequeueReusableCellWithIdentifier(cellIdentifier, forIndexPath: indexPath) as! ReminderViewCell
+        
+        let reminder = reminders[indexPath.row]
+        
+        cell.titleLabel.text = reminder.title
+        cell.descriptionLabel.text = reminder.description
+        cell.dateLabel.text = reminder.dueDate?.description
+        
+        return cell
     }
 }
