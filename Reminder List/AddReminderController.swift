@@ -18,6 +18,7 @@ class AddReminderController: UIViewController, UITextFieldDelegate {
     
     let dateFormatter = NSDateFormatter()
     var reminder = Reminder?()
+    var updatedDate:NSDate?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -54,9 +55,29 @@ class AddReminderController: UIViewController, UITextFieldDelegate {
     
     //MARK: Navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-
+        //When Save Button Pressed
         if saveButton === sender {
-            reminder = Reminder(title: titleText.text!, description: descriptionText.text ?? "", dueDate: NSDate(), isComplete: completeSwitch.on)
+            reminder = Reminder(title: titleText.text!, description: descriptionText.text ?? "", dueDate: updatedDate!, isComplete: completeSwitch.on)
+        }
+        //When Set Due Date button pressed
+        else if segue.identifier == "ShowDate" {
+            let dateDetailViewController = segue.destinationViewController as! DateViewController
+            if(reminder != nil) {
+                dateDetailViewController.dateStore = (reminder?.dueDate)!
+
+            }
+            else {
+                dateDetailViewController.dateStore = NSDate()
+            }
+        }
+    }
+    
+    @IBAction func unwindToAddReminder(sender: UIStoryboardSegue) {
+        if let sourceViewController = sender.sourceViewController as?
+            DateViewController {
+                updatedDate = sourceViewController.datePicker.date
+                dueDateLabel.text = dateFormatter.stringFromDate(updatedDate!)
+                print("reminder date set on return segue")
         }
     }
 

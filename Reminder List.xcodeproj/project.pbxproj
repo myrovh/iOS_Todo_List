@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8B922C161D55D2050050E937 /* DateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B922C151D55D2050050E937 /* DateViewController.swift */; };
 		8BF0C39A1D4EE90900A5B831 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BF0C3991D4EE90900A5B831 /* AppDelegate.swift */; };
 		8BF0C39F1D4EE90900A5B831 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8BF0C39D1D4EE90900A5B831 /* Main.storyboard */; };
 		8BF0C3A21D4EE90900A5B831 /* Reminder_List.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 8BF0C3A01D4EE90900A5B831 /* Reminder_List.xcdatamodeld */; };
@@ -38,6 +39,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		8B922C151D55D2050050E937 /* DateViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DateViewController.swift; path = ../DateViewController.swift; sourceTree = "<group>"; };
 		8BF0C3961D4EE90900A5B831 /* Reminder List.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Reminder List.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8BF0C3991D4EE90900A5B831 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8BF0C39E1D4EE90900A5B831 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -105,6 +107,7 @@
 		8BF0C3981D4EE90900A5B831 /* Reminder List */ = {
 			isa = PBXGroup;
 			children = (
+				8B922C151D55D2050050E937 /* DateViewController.swift */,
 				8BF0C3CE1D4F036500A5B831 /* ReminderListController.swift */,
 				8BF0C3991D4EE90900A5B831 /* AppDelegate.swift */,
 				8BF0C39D1D4EE90900A5B831 /* Main.storyboard */,
@@ -275,6 +278,7 @@
 			files = (
 				8BF9B5191D5355DD00AA3523 /* ReminderViewCell.swift in Sources */,
 				8BF0C3A21D4EE90900A5B831 /* Reminder_List.xcdatamodeld in Sources */,
+				8B922C161D55D2050050E937 /* DateViewController.swift in Sources */,
 				8BF0C3CF1D4F036500A5B831 /* ReminderListController.swift in Sources */,
 				8BF0C3D11D4F05C600A5B831 /* AddReminderController.swift in Sources */,
 				8BF0C39A1D4EE90900A5B831 /* AppDelegate.swift in Sources */,
