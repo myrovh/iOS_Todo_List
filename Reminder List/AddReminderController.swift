@@ -8,7 +8,7 @@
 
 import UIKit
 
-class AddReminderController: UIViewController {
+class AddReminderController: UIViewController, UITextFieldDelegate {
     //MARK: Properties
     @IBOutlet weak var titleText: UITextField!
     @IBOutlet weak var descriptionText: UITextField!
@@ -18,7 +18,26 @@ class AddReminderController: UIViewController {
     
     var reminder = Reminder?()
     
-    //MARK: Actions
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        titleText.delegate = self
+        checkValidReminderTitle()
+    }
+    
+    func textFieldDidBegininEditing(textField: UITextField) {
+        saveButton.enabled = false
+    }
+    
+    func checkValidReminderTitle() {
+        let text = titleText.text ?? ""
+        saveButton.enabled = !text.isEmpty
+    }
+    
+    func textFieldDidEndEditing(textField: UITextField) {
+        checkValidReminderTitle()
+        navigationItem.title = textField.text
+    }
     
     //MARK: Navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
