@@ -16,12 +16,25 @@ class AddReminderController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var dueDateLabel: UILabel!
     @IBOutlet weak var completeSwitch: UISwitch!
     
+    let dateFormatter = NSDateFormatter()
     var reminder = Reminder?()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         titleText.delegate = self
+        
+        if let reminder = reminder {
+            titleText.text = reminder.title
+            descriptionText.text = reminder.reminderDescription
+            completeSwitch.on = reminder.isComplete!
+            dateFormatter.dateStyle = NSDateFormatterStyle.MediumStyle
+            dueDateLabel.text = dateFormatter.stringFromDate(reminder.dueDate!)
+        }
+        else {
+            dueDateLabel.text = dateFormatter.stringFromDate(NSDate())
+        }
+        
         checkValidReminderTitle()
     }
     
@@ -41,12 +54,19 @@ class AddReminderController: UIViewController, UITextFieldDelegate {
     
     //MARK: Navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+
         if saveButton === sender {
             reminder = Reminder(title: titleText.text!, description: descriptionText.text ?? "", dueDate: NSDate(), isComplete: completeSwitch.on)
         }
     }
 
     @IBAction func cancel(sender: UIBarButtonItem) {
-        dismissViewControllerAnimated(true, completion: nil)
+        let isPresentingInAddReminderMode = presentingViewController is UINavigationController
+        if isPresentingInAddReminderMode {
+            dismissViewControllerAnimated(true, completion: nil)
+        }
+        else {
+            navigationController!.popViewControllerAnimated(true)
+        }
     }
 }
