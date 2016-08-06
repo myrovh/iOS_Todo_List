@@ -231,7 +231,11 @@
                         </variation>
                     </view>
                     <navigationItem key="navigationItem" title="Add Reminder" id="C5I-r5-fZw">
-                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="RnB-k9-KID"/>
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="RnB-k9-KID">
+                            <connections>
+                                <action selector="cancel:" destination="aQb-SS-mMj" id="Usm-Tt-Mau"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="save" id="uRD-Rc-EOY">
                             <connections>
                                 <segue destination="pmr-G8-IrN" kind="unwind" unwindAction="unwindToReminderList:" id="p6k-TC-eXy"/>

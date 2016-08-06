@@ -46,4 +46,7 @@ class AddReminderController: UIViewController, UITextFieldDelegate {
         }
     }
 
+    @IBAction func cancel(sender: UIBarButtonItem) {
+        dismissViewControllerAnimated(true, completion: nil)
+    }
 }
