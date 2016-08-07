@@ -8,8 +8,9 @@
 
 import UIKit
 import MapKit
+import CoreLocation
 
-class AddReminderController: UIViewController, UITextFieldDelegate {
+class AddReminderController: UIViewController, UITextFieldDelegate, CLLocationManagerDelegate {
     //MARK: Properties
     @IBOutlet weak var titleText: UITextField!
     @IBOutlet weak var descriptionText: UITextField!
@@ -23,6 +24,9 @@ class AddReminderController: UIViewController, UITextFieldDelegate {
     var updatedDate:NSDate?
     var tempLatitude:Double?
     var tempLongitude:Double?
+    
+    var locationManager = CLLocationManager()
+    var currentLocation: CLLocationCoordinate2D?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -47,9 +51,25 @@ class AddReminderController: UIViewController, UITextFieldDelegate {
             updatedDate = NSDate()
         }
         
+        if(CLLocationManager.locationServicesEnabled()) {
+
+        }
 
         
         checkValidReminderTitle()
+    }
+    
+    func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        let loc: CLLocation = locations[0] as CLLocation
+        currentLocation = loc.coordinate
+        
+        locationManager.stopUpdatingLocation()
+        
+        let testAn: LocationAnnotation = LocationAnnotation(inputTitle: "Location", inputSubtitle: "", inputLat: (currentLocation?.latitude)!, inputLon: (currentLocation?.longitude)!)
+        addAnnotation(testAn)
+        focusOn(testAn)
+        setLocationData(testAn)
+        //print("\(currentLocation!.latitude)")
     }
     
     func textFieldDidBegininEditing(textField: UITextField) {
@@ -94,10 +114,10 @@ class AddReminderController: UIViewController, UITextFieldDelegate {
         }
     }
     @IBAction func setLocation(sender: UIButton) {
-        let testAn: LocationAnnotation = LocationAnnotation(inputTitle: "Test", inputSubtitle: "Subtitle", inputLat: 35, inputLon: -37)
-        addAnnotation(testAn)
-        focusOn(testAn)
-        setLocationData(testAn)
+        locationManager.desiredAccuracy = kCLLocationAccuracyBest
+        locationManager.delegate = self
+        locationManager.requestWhenInUseAuthorization()
+        locationManager.startUpdatingLocation()
     }
 
     @IBAction func cancel(sender: UIBarButtonItem) {

@@ -2,7 +2,9 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>NSLocationWheninUseUsageDescription</key>
+	<key>NSLocationALwaysUsageDescription</key>
+	<string>the application needs always on location for testing</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
 	<string>The application uses this information to determine your location</string>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>en</string>
