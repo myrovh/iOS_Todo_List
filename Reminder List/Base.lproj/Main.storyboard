@@ -25,17 +25,20 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hqn-cN-3Zv">
-                                            <rect key="frame" x="8" y="35" width="193" height="21"/>
+                                            <rect key="frame" x="8" y="35" width="200" height="21"/>
                                             <animations/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="200" id="6GW-i2-uf0"/>
+                                            </constraints>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" red="0.40733393324607325" green="0.40733393324607325" blue="0.40733393324607325" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1hi-Ts-E4d">
-                                            <rect key="frame" x="8" y="8" width="193" height="21"/>
+                                            <rect key="frame" x="8" y="8" width="200" height="21"/>
                                             <animations/>
                                             <constraints>
-                                                <constraint firstAttribute="width" constant="193" id="nrs-1f-XZg"/>
+                                                <constraint firstAttribute="width" constant="200" id="Gl1-Q0-0vt"/>
                                             </constraints>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -58,7 +61,6 @@
                                         <constraint firstItem="GdT-CZ-MWN" firstAttribute="trailing" secondItem="fI1-WF-gFv" secondAttribute="trailingMargin" id="Owd-zc-Y2J"/>
                                         <constraint firstItem="GdT-CZ-MWN" firstAttribute="centerY" secondItem="fI1-WF-gFv" secondAttribute="centerY" id="Tja-CX-zyV"/>
                                         <constraint firstItem="hqn-cN-3Zv" firstAttribute="top" secondItem="1hi-Ts-E4d" secondAttribute="bottom" constant="6" id="TrV-gu-0DQ"/>
-                                        <constraint firstItem="hqn-cN-3Zv" firstAttribute="trailing" secondItem="1hi-Ts-E4d" secondAttribute="trailing" id="lCu-oc-cfG"/>
                                         <constraint firstItem="hqn-cN-3Zv" firstAttribute="leading" secondItem="fI1-WF-gFv" secondAttribute="leadingMargin" id="pSZ-bP-8yh"/>
                                         <constraint firstItem="1hi-Ts-E4d" firstAttribute="top" secondItem="fI1-WF-gFv" secondAttribute="topMargin" id="t5L-A1-Z3d"/>
                                     </constraints>
