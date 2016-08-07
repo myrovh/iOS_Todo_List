@@ -31,9 +31,12 @@ class AddReminderController: UIViewController, UITextFieldDelegate {
             completeSwitch.on = reminder.isComplete!
             dateFormatter.dateStyle = NSDateFormatterStyle.MediumStyle
             dueDateLabel.text = dateFormatter.stringFromDate(reminder.dueDate!)
+            updatedDate = reminder.dueDate!
         }
         else {
             dueDateLabel.text = dateFormatter.stringFromDate(NSDate())
+            reminder = Reminder(title: "", description: "", dueDate: NSDate(), isComplete: false)
+            updatedDate = NSDate()
         }
         
         checkValidReminderTitle()
