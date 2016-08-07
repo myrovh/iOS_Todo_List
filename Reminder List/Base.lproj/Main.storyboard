@@ -124,6 +124,11 @@
                                     <segue destination="Lak-PU-UzX" kind="show" identifier="ShowFullMap" id="i67-0T-RRU"/>
                                 </connections>
                             </barButtonItem>
+                            <barButtonItem title="Sort" id="MJn-i8-mHD">
+                                <connections>
+                                    <action selector="switchSort:" destination="hwH-Hh-ArN" id="8rd-1y-Slp"/>
+                                </connections>
+                            </barButtonItem>
                         </rightBarButtonItems>
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>

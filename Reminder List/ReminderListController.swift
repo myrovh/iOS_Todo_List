@@ -18,6 +18,7 @@ class ReminderListController: UITableViewController {
     let dateFormatter = NSDateFormatter()
     var reminder:Reminder?
     var reminders = [Reminder]()
+    var sortMode: String?
     
     required init?(coder aDecoder: NSCoder) {
         self.databaseReminderList = NSMutableArray()
@@ -82,6 +83,8 @@ class ReminderListController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        sortMode = "Day"
+        
         let fetchRequest = NSFetchRequest()
         let entityDescription = NSEntityDescription.entityForName("List", inManagedObjectContext: self.managedObjectContext)
         fetchRequest.entity = entityDescription
@@ -143,6 +146,19 @@ class ReminderListController: UITableViewController {
         catch let error {
             print("Could not save deletion \(error)")
         }
+    }
+    
+    @IBAction func switchSort(sender: UIBarButtonItem) {
+        if sortMode == "Day" {
+            sortMode = "Week"
+        }
+        else if sortMode == "Week" {
+            sortMode = "Month"
+        }
+        else if sortMode == "Month" {
+            sortMode = "Day"
+        }
+        print("Sort Mode switched to \(sortMode)")
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
