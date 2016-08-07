@@ -18,7 +18,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         let navController = self.window?.rootViewController as! UINavigationController
         let listController = navController.viewControllers[0] as! ReminderListController
-        ReminderListController.managedObjectContext = self.managedObjectContext
+        listController.managedObjectContext = self.managedObjectContext
         return true
     }
 

@@ -12,6 +12,6 @@
     </entity>
     <elements>
         <element name="List" positionX="-288" positionY="-144" width="128" height="58"/>
-        <element name="ReminderData" positionX="-144" positionY="-72" width="128" height="120"/>
+        <element name="ReminderData" positionX="-27" positionY="-82" width="128" height="118"/>
     </elements>
 </model>

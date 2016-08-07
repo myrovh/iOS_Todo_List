@@ -32,8 +32,14 @@ class ReminderListController: UITableViewController {
     }
     
     @IBAction func unwindToReminderList(sender: UIStoryboardSegue) {
-        if let sourceViewController = sender.sourceViewController as?
-            AddReminderController, reminder = sourceViewController.reminder {
+        if let sourceViewController = sender.sourceViewController as? AddReminderController, reminder = sourceViewController.reminder {
+            let convertedReminder: ReminderData = (NSEntityDescription.insertNewObjectForEntityForName("ReminderData", inManagedObjectContext: self.managedObjectContext) as? ReminderData)!
+            convertedReminder.dTitle = reminder.title
+            convertedReminder.dDescription = reminder.reminderDescription
+            convertedReminder.dDate = reminder.dueDate
+            convertedReminder.dComplete = reminder.isComplete
+            self.addReminder(convertedReminder)
+            /*
                 if let selectedIndexPath = tableView.indexPathForSelectedRow {
                     reminders[selectedIndexPath.row] = reminder
                     tableView.reloadRowsAtIndexPaths([selectedIndexPath], withRowAnimation: .None)
@@ -43,6 +49,7 @@ class ReminderListController: UITableViewController {
                     reminders.append(reminder)
                     tableView.insertRowsAtIndexPaths([newIndexPath], withRowAnimation: .Bottom)
                 }
+            */
         }
     }
     
@@ -50,7 +57,7 @@ class ReminderListController: UITableViewController {
         super.viewDidLoad()
         
         let fetchRequest = NSFetchRequest()
-        let entityDescription = NSEntityDescription.entityForName("list", inManagedObjectContext: self.managedObjectContext)
+        let entityDescription = NSEntityDescription.entityForName("List", inManagedObjectContext: self.managedObjectContext)
         fetchRequest.entity = entityDescription
         
         var result = NSArray?()
