@@ -16,6 +16,9 @@
 		8B92BAE71D572987007665D0 /* ReminderData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B92BAE31D572987007665D0 /* ReminderData.swift */; };
 		8B92BAE91D572A08007665D0 /* ReminderListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B92BAE81D572A08007665D0 /* ReminderListController.swift */; };
 		8B92BAED1D5738C6007665D0 /* Reminder_List.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 8B92BAEB1D5738C6007665D0 /* Reminder_List.xcdatamodeld */; };
+		8BBF7FED1D578BD0004DE04C /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8BBF7FEC1D578BD0004DE04C /* MapKit.framework */; };
+		8BBF7FEF1D578DE2004DE04C /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8BBF7FEE1D578DE2004DE04C /* CoreLocation.framework */; };
+		8BBF7FF11D579410004DE04C /* LocationAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BBF7FF01D579410004DE04C /* LocationAnnotation.swift */; };
 		8BF0C39A1D4EE90900A5B831 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BF0C3991D4EE90900A5B831 /* AppDelegate.swift */; };
 		8BF0C39F1D4EE90900A5B831 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8BF0C39D1D4EE90900A5B831 /* Main.storyboard */; };
 		8BF0C3A41D4EE90A00A5B831 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8BF0C3A31D4EE90A00A5B831 /* Assets.xcassets */; };
@@ -54,6 +57,9 @@
 		8B92BAE31D572987007665D0 /* ReminderData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReminderData.swift; sourceTree = "<group>"; };
 		8B92BAE81D572A08007665D0 /* ReminderListController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReminderListController.swift; sourceTree = "<group>"; };
 		8B92BAEC1D5738C6007665D0 /* Reminder_List.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Reminder_List.xcdatamodel; sourceTree = "<group>"; };
+		8BBF7FEC1D578BD0004DE04C /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		8BBF7FEE1D578DE2004DE04C /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		8BBF7FF01D579410004DE04C /* LocationAnnotation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationAnnotation.swift; sourceTree = "<group>"; };
 		8BF0C3961D4EE90900A5B831 /* Reminder List.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Reminder List.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8BF0C3991D4EE90900A5B831 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8BF0C39E1D4EE90900A5B831 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -76,6 +82,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8BBF7FEF1D578DE2004DE04C /* CoreLocation.framework in Frameworks */,
+				8BBF7FED1D578BD0004DE04C /* MapKit.framework in Frameworks */,
 				8B92BADD1D570D3F007665D0 /* CoreData.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -111,6 +119,8 @@
 		8BF0C38D1D4EE90900A5B831 = {
 			isa = PBXGroup;
 			children = (
+				8BBF7FEE1D578DE2004DE04C /* CoreLocation.framework */,
+				8BBF7FEC1D578BD0004DE04C /* MapKit.framework */,
 				8B92BADC1D570D3F007665D0 /* CoreData.framework */,
 				8BF0C3981D4EE90900A5B831 /* Reminder List */,
 				8BF0C3B01D4EE90A00A5B831 /* Reminder ListTests */,
@@ -143,6 +153,7 @@
 				8BF0C3A81D4EE90A00A5B831 /* Info.plist */,
 				8BF0C3CA1D4EEDFD00A5B831 /* Reminder.swift */,
 				8BF0C3D01D4F05C600A5B831 /* AddReminderController.swift */,
+				8BBF7FF01D579410004DE04C /* LocationAnnotation.swift */,
 				8B92BAE81D572A08007665D0 /* ReminderListController.swift */,
 				8B92BAEB1D5738C6007665D0 /* Reminder_List.xcdatamodeld */,
 			);
@@ -237,7 +248,7 @@
 						CreatedOnToolsVersion = 7.1.1;
 						SystemCapabilities = {
 							com.apple.Maps.iOS = {
-								enabled = 0;
+								enabled = 1;
 							};
 						};
 					};
@@ -304,6 +315,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8BF9B5191D5355DD00AA3523 /* ReminderViewCell.swift in Sources */,
+				8BBF7FF11D579410004DE04C /* LocationAnnotation.swift in Sources */,
 				8B92BAC71D570731007665D0 /* ReminderModel.xcdatamodeld in Sources */,
 				8B922C161D55D2050050E937 /* DateViewController.swift in Sources */,
 				8BF0C3D11D4F05C600A5B831 /* AddReminderController.swift in Sources */,

@@ -26,11 +26,6 @@ class ReminderListController: UITableViewController {
         super.init(coder: aDecoder)
     }
     
-    func loadSampleData() {
-        let reminder1 = Reminder(title: "Test", description: "Test Input Data", dueDate: NSDate(), isComplete: false)
-        reminders += [reminder1]
-    }
-    
     @IBAction func unwindToReminderList(sender: UIStoryboardSegue) {
         let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
         let managedContext = appDelegate.managedObjectContext
@@ -44,6 +39,8 @@ class ReminderListController: UITableViewController {
             convertedReminder.dDescription = reminder.reminderDescription
             convertedReminder.dDate = reminder.dueDate
             convertedReminder.dComplete = reminder.isComplete
+            convertedReminder.latitude = reminder.latitude
+            convertedReminder.longitude = reminder.longitude
             //reminder.setValue(reminderInsert.title, forKey: "dTitle")
             //reminder.setValue(reminderInsert.reminderDescription, forKey: "dDescription")
             //reminder.setValue(reminderInsert.dueDate, forKey: "dDate")
@@ -154,7 +151,7 @@ class ReminderListController: UITableViewController {
             if let selectedReminderCell = sender as? ReminderCell {
                 let indexPath = tableView.indexPathForCell(selectedReminderCell)!
                 let selectedReminder = self.databaseReminderList[indexPath.row] as! ReminderData
-                let convertedReminder: Reminder = Reminder(title: selectedReminder.dTitle!, description: selectedReminder.dDescription!, dueDate: selectedReminder.dDate!, isComplete: selectedReminder.dComplete as! Bool)
+                let convertedReminder: Reminder = Reminder(title: selectedReminder.dTitle!, description: selectedReminder.dDescription!, dueDate: selectedReminder.dDate!, isComplete: selectedReminder.dComplete as! Bool, latitude: selectedReminder.latitude as! Double, longitude: selectedReminder.longitude as! Double)
                 reminderDetailViewController.reminder = convertedReminder
             }
         }

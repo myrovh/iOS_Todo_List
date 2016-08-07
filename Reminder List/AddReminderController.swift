@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import MapKit
 
 class AddReminderController: UIViewController, UITextFieldDelegate {
     //MARK: Properties
@@ -15,10 +16,13 @@ class AddReminderController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var saveButton: UIBarButtonItem!
     @IBOutlet weak var dueDateLabel: UILabel!
     @IBOutlet weak var completeSwitch: UISwitch!
+    @IBOutlet weak var mapView: MKMapView!
     
     let dateFormatter = NSDateFormatter()
     var reminder = Reminder?()
     var updatedDate:NSDate?
+    var tempLatitude:Double?
+    var tempLongitude:Double?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,12 +36,18 @@ class AddReminderController: UIViewController, UITextFieldDelegate {
             dateFormatter.dateStyle = NSDateFormatterStyle.MediumStyle
             dueDateLabel.text = dateFormatter.stringFromDate(reminder.dueDate!)
             updatedDate = reminder.dueDate!
+            let testAn: LocationAnnotation = LocationAnnotation(inputTitle: "Test", inputSubtitle: "Subtitle", inputLat: reminder.latitude!, inputLon: reminder.longitude!)
+            addAnnotation(testAn)
+            focusOn(testAn)
+            setLocationData(testAn)
         }
         else {
             dueDateLabel.text = dateFormatter.stringFromDate(NSDate())
-            reminder = Reminder(title: "", description: "", dueDate: NSDate(), isComplete: false)
+            reminder = Reminder(title: "", description: "", dueDate: NSDate(), isComplete: false, latitude: 0, longitude: 0)
             updatedDate = NSDate()
         }
+        
+
         
         checkValidReminderTitle()
     }
@@ -60,7 +70,7 @@ class AddReminderController: UIViewController, UITextFieldDelegate {
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         //When Save Button Pressed
         if saveButton === sender {
-            reminder = Reminder(title: titleText.text!, description: descriptionText.text ?? "", dueDate: updatedDate!, isComplete: completeSwitch.on)
+            reminder = Reminder(title: titleText.text!, description: descriptionText.text ?? "", dueDate: updatedDate!, isComplete: completeSwitch.on, latitude: tempLatitude!, longitude: tempLongitude!)
         }
         //When Set Due Date button pressed
         else if segue.identifier == "ShowDate" {
@@ -83,6 +93,12 @@ class AddReminderController: UIViewController, UITextFieldDelegate {
                 print("reminder date set on return segue")
         }
     }
+    @IBAction func setLocation(sender: UIButton) {
+        let testAn: LocationAnnotation = LocationAnnotation(inputTitle: "Test", inputSubtitle: "Subtitle", inputLat: 35, inputLon: -37)
+        addAnnotation(testAn)
+        focusOn(testAn)
+        setLocationData(testAn)
+    }
 
     @IBAction func cancel(sender: UIBarButtonItem) {
         let isPresentingInAddReminderMode = presentingViewController is UINavigationController
@@ -92,5 +108,19 @@ class AddReminderController: UIViewController, UITextFieldDelegate {
         else {
             navigationController!.popViewControllerAnimated(true)
         }
+    }
+    
+    func addAnnotation(annotation: LocationAnnotation) {
+        self.mapView.addAnnotation(annotation)
+    }
+    
+    func focusOn(annotation: LocationAnnotation) {
+        self.mapView.centerCoordinate = annotation.coordinate
+        self.mapView.selectAnnotation(annotation, animated: true)
+    }
+    
+    func setLocationData(annotation: LocationAnnotation) {
+        tempLatitude = annotation.coordinate.latitude
+        tempLongitude = annotation.coordinate.longitude
     }
 }
