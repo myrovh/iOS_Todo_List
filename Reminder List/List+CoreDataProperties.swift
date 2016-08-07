@@ -16,4 +16,8 @@ extension List {
 
     @NSManaged var members: NSSet?
 
+    func addReminder(value: ReminderData) {
+        let reminder = self.mutableArrayValueForKey("members")
+        reminder.addObject(value)
+    }
 }
