@@ -1,11 +1,3 @@
-//
-//  MapViewController.swift
-//  Reminder List
-//
-//  Created by Dyson Talbot Sunderland Hamilton on 8/08/2016.
-//  Copyright © 2016 myrovh. All rights reserved.
-//
-
 import UIKit
 import MapKit
 import CoreData
