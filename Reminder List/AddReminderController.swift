@@ -18,6 +18,7 @@ class AddReminderController: UIViewController, UITextFieldDelegate, CLLocationMa
     @IBOutlet weak var dueDateLabel: UILabel!
     @IBOutlet weak var completeSwitch: UISwitch!
     @IBOutlet weak var mapView: MKMapView!
+
     
     let dateFormatter = NSDateFormatter()
     var reminder = Reminder?()
@@ -51,12 +52,20 @@ class AddReminderController: UIViewController, UITextFieldDelegate, CLLocationMa
             updatedDate = NSDate()
         }
         
-        if(CLLocationManager.locationServicesEnabled()) {
-
-        }
-
+        let touchEventRec = UILongPressGestureRecognizer(target: self, action: "touchEvent:")
+        touchEventRec.minimumPressDuration = 2.0
+        mapView.addGestureRecognizer(touchEventRec)
         
         checkValidReminderTitle()
+    }
+    
+    func touchEvent(gestureRecognizer:UIGestureRecognizer) {
+        let touchPoint = gestureRecognizer.locationInView(mapView)
+        let newCoordinates = mapView.convertPoint(touchPoint, toCoordinateFromView: mapView)
+        let annotation = LocationAnnotation(inputTitle: "New Location", inputSubtitle: "", inputLat: newCoordinates.latitude, inputLon: newCoordinates.longitude)
+        addAnnotation(annotation)
+        focusOn(annotation)
+        setLocationData(annotation)
     }
     
     func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {

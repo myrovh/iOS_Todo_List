@@ -191,4 +191,26 @@ class ReminderListController: UITableViewController {
             print("Could not save addition \(error)")
         }
     }
+    
+    /*
+    func fetchReminder(titleString: String, descriptionString: String) -> ReminderData? {
+        let fetchRequest = NSFetchRequest(entityName: "ReminderData")
+        let predicate = NSPredicate(format: "(\(titleString) like dTitle) AND (\(descriptionString) like dDescription)", argumentArray: nil)
+        var error = NSErrorPointer()
+        
+        fetchRequest.predicate = predicate
+        fetchRequest.fetchLimit = 1
+        fetchRequest.fetchBatchSize = 1
+        
+        let fetchedResults = try managedObjectContext.executeFetchRequest(fetchRequest, error: error)
+
+        
+        if fetchedResults?.count != 0 {
+            if let fetchedReminder: ReminderData = fetchedResults![0] as? ReminderData {
+                return fetchedReminder
+            }
+        }
+        return nil
+    }
+    */
 }
