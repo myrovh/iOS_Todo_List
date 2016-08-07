@@ -32,6 +32,34 @@ class ReminderListController: UITableViewController {
     }
     
     @IBAction func unwindToReminderList(sender: UIStoryboardSegue) {
+        let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+        let managedContext = appDelegate.managedObjectContext
+        
+        //let entity = NSEntityDescription.entityForName("ReminderData", inManagedObjectContext: managedContext)
+        //let reminder = NSManagedObject(entity: entity!, insertIntoManagedObjectContext: managedContext)
+        
+        if let sourceViewController = sender.sourceViewController as? AddReminderController, reminder = sourceViewController.reminder {
+            let convertedReminder: ReminderData = (NSEntityDescription.insertNewObjectForEntityForName("ReminderData", inManagedObjectContext: self.managedObjectContext) as? ReminderData)!
+            convertedReminder.dTitle = reminder.title
+            convertedReminder.dDescription = reminder.reminderDescription
+            convertedReminder.dDate = reminder.dueDate
+            convertedReminder.dComplete = reminder.isComplete
+            //reminder.setValue(reminderInsert.title, forKey: "dTitle")
+            //reminder.setValue(reminderInsert.reminderDescription, forKey: "dDescription")
+            //reminder.setValue(reminderInsert.dueDate, forKey: "dDate")
+            //reminder.setValue(reminderInsert.isComplete, forKey: "dComplete")
+            currentList?.addReminder(convertedReminder)
+            self.databaseReminderList = NSMutableArray(array: (currentList!.members?.allObjects as! [ReminderData]))
+            self.tableView.reloadData()
+            
+            do{
+                try managedContext.save()
+                
+            } catch let error as NSError {
+                print("Error \(error)")
+            }
+        }
+        /*
         if let sourceViewController = sender.sourceViewController as? AddReminderController, reminder = sourceViewController.reminder {
             let convertedReminder: ReminderData = (NSEntityDescription.insertNewObjectForEntityForName("ReminderData", inManagedObjectContext: self.managedObjectContext) as? ReminderData)!
             convertedReminder.dTitle = reminder.title
@@ -51,6 +79,7 @@ class ReminderListController: UITableViewController {
                 }
             */
         }
+*/
     }
     
     override func viewDidLoad() {
