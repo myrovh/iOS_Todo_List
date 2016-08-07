@@ -8,6 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		8B922C161D55D2050050E937 /* DateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B922C151D55D2050050E937 /* DateViewController.swift */; };
+		8B92BAC71D570731007665D0 /* ReminderModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 8B92BAC51D570731007665D0 /* ReminderModel.xcdatamodeld */; };
+		8B92BAD91D570B77007665D0 /* List+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B92BAD61D570B77007665D0 /* List+CoreDataProperties.swift */; };
+		8B92BADA1D570B77007665D0 /* List.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B92BAD71D570B77007665D0 /* List.swift */; };
+		8B92BADB1D570B77007665D0 /* Reminder+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B92BAD81D570B77007665D0 /* Reminder+CoreDataProperties.swift */; };
+		8B92BADD1D570D3F007665D0 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8B92BADC1D570D3F007665D0 /* CoreData.framework */; };
 		8BF0C39A1D4EE90900A5B831 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BF0C3991D4EE90900A5B831 /* AppDelegate.swift */; };
 		8BF0C39F1D4EE90900A5B831 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8BF0C39D1D4EE90900A5B831 /* Main.storyboard */; };
 		8BF0C3A21D4EE90900A5B831 /* Reminder_List.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 8BF0C3A01D4EE90900A5B831 /* Reminder_List.xcdatamodeld */; };
@@ -40,6 +45,11 @@
 
 /* Begin PBXFileReference section */
 		8B922C151D55D2050050E937 /* DateViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DateViewController.swift; path = ../DateViewController.swift; sourceTree = "<group>"; };
+		8B92BAC61D570731007665D0 /* ReminderModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ReminderModel.xcdatamodel; sourceTree = "<group>"; };
+		8B92BAD61D570B77007665D0 /* List+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "List+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		8B92BAD71D570B77007665D0 /* List.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = List.swift; sourceTree = "<group>"; };
+		8B92BAD81D570B77007665D0 /* Reminder+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Reminder+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		8B92BADC1D570D3F007665D0 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		8BF0C3961D4EE90900A5B831 /* Reminder List.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Reminder List.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8BF0C3991D4EE90900A5B831 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8BF0C39E1D4EE90900A5B831 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -64,6 +74,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8B92BADD1D570D3F007665D0 /* CoreData.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -87,6 +98,7 @@
 		8BF0C38D1D4EE90900A5B831 = {
 			isa = PBXGroup;
 			children = (
+				8B92BADC1D570D3F007665D0 /* CoreData.framework */,
 				8BF0C3981D4EE90900A5B831 /* Reminder List */,
 				8BF0C3B01D4EE90A00A5B831 /* Reminder ListTests */,
 				8BF0C3BB1D4EE90A00A5B831 /* Reminder ListUITests */,
@@ -107,10 +119,14 @@
 		8BF0C3981D4EE90900A5B831 /* Reminder List */ = {
 			isa = PBXGroup;
 			children = (
+				8B92BAD61D570B77007665D0 /* List+CoreDataProperties.swift */,
+				8B92BAD71D570B77007665D0 /* List.swift */,
+				8B92BAD81D570B77007665D0 /* Reminder+CoreDataProperties.swift */,
 				8B922C151D55D2050050E937 /* DateViewController.swift */,
 				8BF0C3CE1D4F036500A5B831 /* ReminderListController.swift */,
 				8BF0C3991D4EE90900A5B831 /* AppDelegate.swift */,
 				8BF0C39D1D4EE90900A5B831 /* Main.storyboard */,
+				8B92BAC51D570731007665D0 /* ReminderModel.xcdatamodeld */,
 				8BF9B5181D5355DD00AA3523 /* ReminderViewCell.swift */,
 				8BF0C3A31D4EE90A00A5B831 /* Assets.xcassets */,
 				8BF0C3A51D4EE90A00A5B831 /* LaunchScreen.storyboard */,
@@ -277,8 +293,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				8BF9B5191D5355DD00AA3523 /* ReminderViewCell.swift in Sources */,
+				8B92BAC71D570731007665D0 /* ReminderModel.xcdatamodeld in Sources */,
 				8BF0C3A21D4EE90900A5B831 /* Reminder_List.xcdatamodeld in Sources */,
+				8B92BADA1D570B77007665D0 /* List.swift in Sources */,
 				8B922C161D55D2050050E937 /* DateViewController.swift in Sources */,
+				8B92BAD91D570B77007665D0 /* List+CoreDataProperties.swift in Sources */,
+				8B92BADB1D570B77007665D0 /* Reminder+CoreDataProperties.swift in Sources */,
 				8BF0C3CF1D4F036500A5B831 /* ReminderListController.swift in Sources */,
 				8BF0C3D11D4F05C600A5B831 /* AddReminderController.swift in Sources */,
 				8BF0C39A1D4EE90900A5B831 /* AppDelegate.swift in Sources */,
@@ -530,6 +550,16 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
+		8B92BAC51D570731007665D0 /* ReminderModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				8B92BAC61D570731007665D0 /* ReminderModel.xcdatamodel */,
+			);
+			currentVersion = 8B92BAC61D570731007665D0 /* ReminderModel.xcdatamodel */;
+			path = ReminderModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
 		8BF0C3A01D4EE90900A5B831 /* Reminder_List.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
