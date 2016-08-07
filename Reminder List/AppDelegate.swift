@@ -16,7 +16,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
-        // Override point for customization after application launch.
+        let navController = self.window?.rootViewController as! UINavigationController
+        let listController = navController.viewControllers[0] as! ReminderListController
+        ReminderListController.managedObjectContext = self.managedObjectContext
         return true
     }
 
@@ -54,7 +56,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     lazy var managedObjectModel: NSManagedObjectModel = {
         // The managed object model for the application. This property is not optional. It is a fatal error for the application not to be able to find and load its model.
-        let modelURL = NSBundle.mainBundle().URLForResource("Reminder_List", withExtension: "momd")!
+        let modelURL = NSBundle.mainBundle().URLForResource("ReminderModel", withExtension: "momd")!
         return NSManagedObjectModel(contentsOfURL: modelURL)!
     }()
 

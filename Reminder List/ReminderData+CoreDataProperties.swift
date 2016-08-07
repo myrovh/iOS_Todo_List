@@ -1,5 +1,5 @@
 //
-//  Reminder+CoreDataProperties.swift
+//  ReminderData+CoreDataProperties.swift
 //  Reminder List
 //
 //  Created by Dyson Talbot Sunderland Hamilton on 7/08/2016.
@@ -12,12 +12,12 @@
 import Foundation
 import CoreData
 
-extension Reminder {
+extension ReminderData {
 
-    @NSManaged var dTitle: String?
-    @NSManaged var dDescription: String?
-    @NSManaged var dDate: NSDate?
     @NSManaged var dComplete: NSNumber?
+    @NSManaged var dDate: NSDate?
+    @NSManaged var dDescription: String?
+    @NSManaged var dTitle: String?
     @NSManaged var owner: List?
 
 }

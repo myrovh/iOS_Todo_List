@@ -3,7 +3,7 @@
     <entity name="List" representedClassName=".List" syncable="YES">
         <relationship name="members" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="ReminderData" inverseName="owner" inverseEntity="ReminderData" syncable="YES"/>
     </entity>
-    <entity name="ReminderData" representedClassName=".Reminder" syncable="YES">
+    <entity name="ReminderData" representedClassName=".ReminderData" syncable="YES">
         <attribute name="dComplete" optional="YES" attributeType="Boolean" syncable="YES"/>
         <attribute name="dDate" optional="YES" attributeType="Date" syncable="YES"/>
         <attribute name="dDescription" optional="YES" attributeType="String" syncable="YES"/>
@@ -11,7 +11,7 @@
         <relationship name="owner" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="List" inverseName="members" inverseEntity="List" syncable="YES"/>
     </entity>
     <elements>
-        <element name="ReminderData" positionX="-144" positionY="-72" width="128" height="118"/>
         <element name="List" positionX="-288" positionY="-144" width="128" height="58"/>
+        <element name="ReminderData" positionX="-144" positionY="-72" width="128" height="120"/>
     </elements>
 </model>
