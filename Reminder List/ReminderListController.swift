@@ -155,6 +155,11 @@ class ReminderListController: UITableViewController {
                 reminderDetailViewController.reminder = convertedReminder
             }
         }
+        else if segue.identifier == "ShowFullMap" {
+            let controller: MapViewController = segue.destinationViewController as! MapViewController
+            controller.managedObjectContext = self.managedObjectContext
+            //controller.delegate = self
+        }
         else if segue.identifier == "AddItem" {
             print("Adding a new Reminder")
         }

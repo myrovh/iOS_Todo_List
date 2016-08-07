@@ -19,6 +19,7 @@
 		8BBF7FED1D578BD0004DE04C /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8BBF7FEC1D578BD0004DE04C /* MapKit.framework */; };
 		8BBF7FEF1D578DE2004DE04C /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8BBF7FEE1D578DE2004DE04C /* CoreLocation.framework */; };
 		8BBF7FF11D579410004DE04C /* LocationAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BBF7FF01D579410004DE04C /* LocationAnnotation.swift */; };
+		8BBF7FF31D57C0FB004DE04C /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BBF7FF21D57C0FB004DE04C /* MapViewController.swift */; };
 		8BF0C39A1D4EE90900A5B831 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BF0C3991D4EE90900A5B831 /* AppDelegate.swift */; };
 		8BF0C39F1D4EE90900A5B831 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8BF0C39D1D4EE90900A5B831 /* Main.storyboard */; };
 		8BF0C3A41D4EE90A00A5B831 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8BF0C3A31D4EE90A00A5B831 /* Assets.xcassets */; };
@@ -60,6 +61,7 @@
 		8BBF7FEC1D578BD0004DE04C /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		8BBF7FEE1D578DE2004DE04C /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		8BBF7FF01D579410004DE04C /* LocationAnnotation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationAnnotation.swift; sourceTree = "<group>"; };
+		8BBF7FF21D57C0FB004DE04C /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		8BF0C3961D4EE90900A5B831 /* Reminder List.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Reminder List.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8BF0C3991D4EE90900A5B831 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8BF0C39E1D4EE90900A5B831 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -155,6 +157,7 @@
 				8BF0C3D01D4F05C600A5B831 /* AddReminderController.swift */,
 				8BBF7FF01D579410004DE04C /* LocationAnnotation.swift */,
 				8B92BAE81D572A08007665D0 /* ReminderListController.swift */,
+				8BBF7FF21D57C0FB004DE04C /* MapViewController.swift */,
 				8B92BAEB1D5738C6007665D0 /* Reminder_List.xcdatamodeld */,
 			);
 			path = "Reminder List";
@@ -327,6 +330,7 @@
 				8B92BAE41D572987007665D0 /* List+CoreDataProperties.swift in Sources */,
 				8B92BAE51D572987007665D0 /* List.swift in Sources */,
 				8B92BAE61D572987007665D0 /* ReminderData+CoreDataProperties.swift in Sources */,
+				8BBF7FF31D57C0FB004DE04C /* MapViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
