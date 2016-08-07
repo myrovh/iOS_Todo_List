@@ -137,7 +137,7 @@ class ReminderListController: UITableViewController {
             managedObjectContext.deleteObject(databaseReminderList.objectAtIndex(indexPath.row) as! NSManagedObject)
             self.databaseReminderList.removeObjectAtIndex(indexPath.row)
             tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
-            self.tableView.reloadSections(NSIndexSet(index: 1), withRowAnimation: .Fade)
+            //self.tableView.reloadSections(NSIndexSet(index: 1), withRowAnimation: .Fade)
         }
         
         do {
